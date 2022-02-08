@@ -11,13 +11,6 @@ type EmployeeDirectory struct {
 	Fields    []*Field    `json:"fields"`
 }
 
-// Field represents a BambooHR API field.
-type Field struct {
-	ID   string `json:"id"`
-	Type string `json:"type"`
-	Name string `json:"name"`
-}
-
 // NewEmployeeDirectoryFromJSON parses the given JSON (as byte sequence) and returns a new EmployeeDirectory.
 func NewEmployeeDirectoryFromJSON(data []byte) (*EmployeeDirectory, error) {
 	var employees EmployeeDirectory
