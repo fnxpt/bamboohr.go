@@ -83,6 +83,9 @@ type Employee struct {
 	Nin                     string  `json:"nin"`                         // The employee's nin number
 	NationalID              string  `json:"nationalID"`                  // The employee's national ID number
 	Nationality             string  `json:"nationality"`                 // The employee's nationality
+	Notes                   string  `json:"customNotes1"`                // The employee's notes
+	Squad                   string  `json:"squad"`                       // The employee's squad
+	EmploymentStatus        string  `json:"employmentStatus"`
 }
 
 // NewEmployeeFromJSON parses the given JSON (as byte sequence) and returns a new Employee.
