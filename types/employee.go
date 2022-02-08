@@ -54,7 +54,7 @@ type Employee struct {
 	PayScheduleID           int     `json:"payScheduleId,string"`        // The ID value corresponding to the pay schedule that an employee belongs to.
 	PayFrequency            string  `json:"payFrequency"`                // The employee's CURRENT pay frequency. ie: "Weekly", "Every other week", "Twice a month", "Monthly", "Quarterly", "Twice a year", or "Yearly"
 	IncludeInPayroll        bool    `json:"includeInPayroll,string"`     // Should employee be included in payroll (Yes or No)
-	TimeTrackingEnabled     bool    `json:"timeTrackingEnabled,sring"`   // Should time tracking be enabled for the employee (Yes or No)
+	TimeTrackingEnabled     bool    `json:"timeTrackingEnabled,string"`  // Should time tracking be enabled for the employee (Yes or No)
 	PreferredName           string  `json:"preferredName"`               // The employee's preferred name.
 	Ssn                     string  `json:"ssn"`                         // The employee's Social Security number.
 	Sin                     string  `json:"sin"`                         // The employee's Canadian Social Insurance Number.
