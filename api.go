@@ -1,6 +1,7 @@
 package bamboohr
 
 import (
+	"bytes"
 	"fmt"
 	"io"
 	"io/ioutil"
@@ -47,7 +48,17 @@ func (api *API) get(path string) ([]byte, error) {
 }
 
 func (api *API) post(path string, body []byte) ([]byte, error) {
-	return nil, fmt.Errorf("method %s is not implemented yet", http.MethodPost)
+	req, err := api.newRequest(http.MethodPost, path, bytes.NewBuffer(body))
+	if err != nil {
+		return nil, err
+	}
+
+	res, err := api.HTTPClient.Do(req)
+	if err != nil {
+		return nil, err
+	}
+
+	return ioutil.ReadAll(res.Body)
 }
 
 func (api *API) delete(path string) ([]byte, error) {
