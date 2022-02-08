@@ -1,19 +1,19 @@
 package bamboohr
 
 import (
-	"encoding/json"
-	"fmt"
-
 	"github.com/AkihikoITOH/bamboohr.go/types"
 )
 
-// UpdateAnEmployee updates an employee with the given employee number.
-// For more details, refer to https://www.bamboohr.com/api/documentation/employees.php
-func (api *API) UpdateAnEmployee(number string, employee *types.EmployeeUpdate) error {
-	path := fmt.Sprintf("/employees/%s", number)
-	body, _ := json.Marshal(employee)
+// GetFields fetches all fields from the BambooHR API.
+// For more details, refer to https://documentation.bamboohr.com/reference/metadata-get-a-list-of-fields
+func (api *API) GetFields() (*[]types.Field, error) {
+	path := "/meta/fields/"
 
-	_, err := api.post(path, body)
+	data, err := api.get(path)
 
-	return err
+	if err != nil {
+		return nil, err
+	}
+
+	return types.FieldsFromJSON(data)
 }
