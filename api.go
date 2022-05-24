@@ -19,7 +19,7 @@ const (
 	// BambooHRAPIVersion is the API version number.
 	BambooHRAPIVersion = "v1"
 	// DefaultTimeout is the duration for which it waits for the API to respond.
-	DefaultTimeout = 10 * time.Second
+	DefaultTimeout = 60 * time.Second
 )
 
 // API object contains the API configuration and has methods to communicate with the API.
