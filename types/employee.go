@@ -84,8 +84,11 @@ type Employee struct {
 	NationalID              string  `json:"nationalID"`                  // The employee's national ID number
 	Nationality             string  `json:"nationality"`                 // The employee's nationality
 	Notes                   string  `json:"customNotes1"`                // The employee's notes
-	Squad                   string  `json:"squad"`                       // The employee's squad
+	Squad                   string  `json:"4628"`                        // The employee's squad
+	Buddy                   string  `json:"4680"`                        // The employee's buddy
 	EmploymentStatus        string  `json:"employmentStatus"`
+	JobFamily               string  `json:"4654"`
+	LastDayAtOffice         string  `json:"customLastDayintheOffice"`
 }
 
 // NewEmployeeFromJSON parses the given JSON (as byte sequence) and returns a new Employee.
