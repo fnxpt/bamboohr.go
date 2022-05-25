@@ -84,10 +84,10 @@ type Employee struct {
 	NationalID              string  `json:"nationalID"`                  // The employee's national ID number
 	Nationality             string  `json:"nationality"`                 // The employee's nationality
 	Notes                   string  `json:"customNotes1"`                // The employee's notes
-	Squad                   string  `json:"4628"`                        // The employee's squad
-	Buddy                   string  `json:"4680"`                        // The employee's buddy
+	Squad                   string  `json:"customSquad"`                 // The employee's squad
+	Buddy                   string  `json:"customBuddy"`                 // The employee's buddy
 	EmploymentStatus        string  `json:"employmentStatus"`
-	JobFamily               string  `json:"4654"`
+	JobFamily               string  `json:"customJobFamily"`
 	LastDayAtOffice         string  `json:"customLastDayintheOffice"`
 }
 

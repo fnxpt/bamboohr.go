@@ -49,13 +49,18 @@ func (api *API) get(path string) ([]byte, error) {
 
 func (api *API) post(path string, body []byte) ([]byte, error) {
 	req, err := api.newRequest(http.MethodPost, path, bytes.NewBuffer(body))
+	req.Header.Add("Content-Type", "application/json")
+
 	if err != nil {
 		return nil, err
 	}
 
 	res, err := api.HTTPClient.Do(req)
+
 	if err != nil {
 		return nil, err
+	} else if res.StatusCode >= 400 {
+		return nil, fmt.Errorf("failed with code %d", res.StatusCode)
 	}
 
 	return ioutil.ReadAll(res.Body)
