@@ -89,6 +89,7 @@ type Employee struct {
 	EmploymentStatus        string  `json:"employmentStatus"`
 	JobFamily               string  `json:"customJobFamily"`
 	LastDayAtOffice         string  `json:"customLastDayintheOffice"`
+	JobReferenceTitle       string  `json:"customJobTitle"`
 }
 
 // NewEmployeeFromJSON parses the given JSON (as byte sequence) and returns a new Employee.
