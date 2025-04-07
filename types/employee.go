@@ -91,6 +91,7 @@ type Employee struct {
 	LastDayAtOffice         string  `json:"customLastDayintheOffice"`
 	JobReferenceTitle       string  `json:"customJobTitle"`
 	IsPeopleManager         *string `json:"customPeopleManager"`
+	GithubUsername          *string `json:"customGitHubUsername"`
 }
 
 // NewEmployeeFromJSON parses the given JSON (as byte sequence) and returns a new Employee.
